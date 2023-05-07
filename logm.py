@@ -8,12 +8,10 @@ def Open_window(window): #function def for new window
     from loginpage import login
     login()
 
-def O_window(): #function def for new window
-    win = Tk()
-    win.geometry("400x400")
-    win.title("new window")
-    Label(win, text = "sign page").pack()
-    win.mainloop()
+def O_window(window): #function def for new window
+    window.destroy()
+    from signup import sign
+    sign()
 
 def register():  
     window = Tk()
@@ -33,7 +31,7 @@ def register():
     #log.pack()
     log.place(anchor = 'w', relx = 0.48, rely = 0.6)
 
-    sig = Button(window, text = "    sign in    ", fg = "black", bg = "white", font = font2, command = O_window)#signin button
+    sig = Button(window, text = "    sign in    ", fg = "black", bg = "white", font = font2, command = lambda:O_window(window))#signin button
     sig.pack()
     sig.place(anchor = 'w', relx = 0.48, rely = 0.7)
 
